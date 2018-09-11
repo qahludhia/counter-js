@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div class="tengah-coy">
+    <h1 id="subjudul">0</h1>
+    <!--<button onclick="tampilkanAlert()">Alert</button>-->
+    <button type="button" class="btn btn-outline-light" id="plus-button">+</button>
+    <button type="button" class="btn btn-outline-light" id="minus-button">-</button>
+    </div>    
+    <script>
+        var number = 0;
+        var judul = document.getElementById('judul')
+        var subjudul = document.getElementById('subjudul')
+        
+
+        var tambah = document.getElementById('plus-button')
+        var kurang = document.getElementById('minus-button')
+
+        tambah.addEventListener('click', function (){
+            console.log('NILAI NUMBER SEKARANG: '+ number)
+            console.log('tombol plus diklik')
+            number = number + 1;
+            console.log('NILAI NUMBER SEKARANG: '+ number)
+            subjudul.innerHTML = number;
+        })
+        
+        kurang.addEventListener('click', function (){
+            console.log('NILAI NUMBER SEKARANG: '+ number);
+            console.log('tombol minus diklik');
+            number = number - 1;
+            console.log('NILAI NUMBER SEKARANG: '+ number);
+            subjudul.innerHTML = number;
+        })
+      
+        
+    </script>
+</body>
+</html>
