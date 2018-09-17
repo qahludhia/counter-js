@@ -18,7 +18,10 @@
     <button type="button" class="btn btn-outline-light" id="minus-button">-</button>
     </div>    
     <script>
-        var number = 0;
+        var number = parseInt(localStorage.getItem('number'));
+        if(isNaN(number)) {
+            number = 0;
+        }
         var judul = document.getElementById('judul')
         var subjudul = document.getElementById('subjudul')
         
@@ -26,12 +29,15 @@
         var tambah = document.getElementById('plus-button')
         var kurang = document.getElementById('minus-button')
 
+        subjudul.innerHTML = number          
+
         tambah.addEventListener('click', function (){
             console.log('NILAI NUMBER SEKARANG: '+ number)
             console.log('tombol plus diklik')
             number = number + 1;
             console.log('NILAI NUMBER SEKARANG: '+ number)
             subjudul.innerHTML = number;
+            localStorage.setItem('number', number)
         })
         
         kurang.addEventListener('click', function (){
@@ -40,6 +46,7 @@
             number = number - 1;
             console.log('NILAI NUMBER SEKARANG: '+ number);
             subjudul.innerHTML = number;
+            localStorage.setItem('number', number)
         })
       
         
